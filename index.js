@@ -89,7 +89,7 @@ let animalsTemplates = [{ name: 'Alex', type: ANIMALS_TYPES.LION }, { name: 'Mar
 let animals = []
 const animalFactory = new AnimalFactory()
 animalsTemplates.forEach(e => {
-    const animal = animalFactory.create(a)
+    const animal = animalFactory.create(e)
     animals.push(animal)
 })
 
