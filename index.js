@@ -60,7 +60,7 @@ class Lion extends Animal {
 class Zebra extends Animal {
     constructor(...args) {
         super(...args)
-        this.sound = 'brrr'
+        this.sound = 'brrruuu'
     }
     //differents behaviors
 
@@ -69,7 +69,7 @@ class Zebra extends Animal {
 class Giraffe extends Animal {
     constructor(...args) {
         super(...args)
-        this.sound = 'frrr'
+        this.sound = 'grom'
     }
     //differents behaviors
 
@@ -78,18 +78,21 @@ class Giraffe extends Animal {
 class Hippopotamus extends Animal {
     constructor(...args) {
         super(...args)
-        this.sound = 'rrr'
+        this.sound = 'brom'
     }
     //differents behaviors
 
 }
 
+let animalsTemplates = [{ name: 'Alex', type: ANIMALS_TYPES.LION }, { name: 'Marty', type: ANIMALS_TYPES.ZEBRA }, { name: 'Melman', type: ANIMALS_TYPES.GIRAFFE }, { name: 'Gloria', type: ANIMALS_TYPES.HIPPOPOTAMUS }]
+
 let animals = []
 const animalFactory = new AnimalFactory()
-animals.push(animalFactory.create({ name: 'Alex', type: ANIMALS_TYPES.LION }))
-animals.push(animalFactory.create({ name: 'Marty', type: ANIMALS_TYPES.ZEBRA }))
-animals.push(animalFactory.create({ name: 'Melman', type: ANIMALS_TYPES.GIRAFFE }))
-animals.push(animalFactory.create({ name: 'Gloria', type: ANIMALS_TYPES.HIPPOPOTAMUS }))
+animalsTemplates.forEach(e => {
+    const animal = animalFactory.create(a)
+    animals.push(animal)
+})
+
 const animalsImages = document.querySelectorAll('img[data-animal-type]')
 animalsImages.forEach(e => e.addEventListener('click', function (event) {
     const type = event.target.getAttribute('data-animal-type');
