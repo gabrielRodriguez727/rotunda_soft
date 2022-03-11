@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="./index.js"></script>
+</head>
+
+<body>
+    <main>
+        <div class="characters-container">
+            <div class="character-card">
+                <figure>
+                    <img src="./imgs/alex.png" data-animal-type="lion" alt="Alex">
+                    <figcaption>Alex</figcaption>
+                </figure>
+            </div>
+            <div class="character-card">
+                <figure>
+                    <img src="./imgs/marty.png" data-animal-type="zebra" alt="Marty">
+                    <figcaption>Marty</figcaption>
+                </figure>
+            </div>
+            <div class="character-card">
+                <figure>
+                    <img src="./imgs/gloria.png" data-animal-type="hippopotamus" alt="Gloria">
+                    <figcaption>Gloria</figcaption>
+                </figure>
+            </div>
+            <div class="character-card">
+                <figure>
+                    <img src="./imgs/melman.png" data-animal-type="giraffe" alt="Melman">
+                    <figcaption>Melman</figcaption>
+                </figure>
+            </div>
+        </div>
+        <div class="speak-container">
+            <input id="speak_words" placeholder="Los animales andan diciendo.." />
+            <p id="paragraph_print"> </p>
+        </div>
+    </main>
+
+    <style>
+        :root {
+            --card-color: lightgoldenrodyellow;
+            --card-size: 240px;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            height: 100vh;
+        }
+
+        .characters-container {
+            display: grid;
+            gap: 26px;
+            grid-template-columns: repeat(auto-fit, var(--card-size));
+            place-content: center;
+        }
+
+        .character-card {
+            background-color: var(--card-color);
+            border-radius: 15px;
+            /* height: var(--card-size); */
+            width: var(--card-size);
+            box-sizing: border-box;
+        }
+
+        .character-card figure {
+            margin: 0;
+        }
+
+        .character-card img {
+            height: var(--card-size);
+            width: 100%;
+            object-fit: contain;
+        }
+
+        .character-card figcaption {
+            text-align: center;
+        }
+
+        .character-card:hover {
+            outline: none;
+            border: 2px solid #dadada;
+            border-radius: 15px;
+            border-color: #9ecaed;
+            box-shadow: 0 0 10px #9ecaed;
+        }
+
+        .speak-container {
+            display: flex;
+            flex-direction: column;
+            margin-top: 50px;
+        }
+
+        #speak_words,
+        #paragraph_print {
+            width: 350px;
+            margin: auto;
+        }
+    </style>
+</body>
+
+</html>
